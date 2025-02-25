@@ -41,7 +41,7 @@ To install the project on your local machine, follow these steps:
 
    ```bash
    git clone https://github.com/AREA-C/AREA-C.github.io.git
-`
+```
    Navigate to the project directory:
    ```bash
 cd AREA-C.github.io
@@ -68,7 +68,6 @@ If there are dependencies (e.g., JavaScript libraries), make sure to install the
    ```bash
 npm install
 ```
-
 ##🤝 Contributing
 
 
