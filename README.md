@@ -52,7 +52,7 @@ Open the index.html file in your browser to start using the project. For PHP-rel
 
 
 
-##🔧 Installation
+## 🔧 Installation
 To run AREA-C locally, follow these steps:
 
 Set up a local server (for PHP functionality): You will need a local server environment to run PHP files (e.g., XAMPP, WAMP, MAMP). Download and install any of these tools.
@@ -70,7 +70,7 @@ npm install
 ```
 
 ## 📸 Screenshots
-![Screenshot 2025-02-25 223533](https://github.com/user-attachments/assets/151e16e7-d1ac-41d0-90f4-b3663f2af530))
+![Screenshot 2025-02-25 223533](https://github.com/user-attachments/assets/151e16e7-d1ac-41d0-90f4-b3663f2af530)
 
 ## 🚀 Demo
 You can view the demo of the project at [[live demo link](https://area-c.github.io/)].
