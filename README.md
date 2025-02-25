@@ -68,6 +68,13 @@ If there are dependencies (e.g., JavaScript libraries), make sure to install the
 ```bash
 npm install
 ```
+
+## 📸 Screenshots
+![Screenshot](![image](https://github.com/user-attachments/assets/a3448e18-573b-4e45-af21-9e4928be3839))
+
+## 🚀 Demo
+You can view the demo of the project at [[live demo link](https://area-c.github.io/)].
+
 ##🤝 Contributing
 We welcome contributions from the community! If you'd like to contribute to this project, please follow these steps:
 
