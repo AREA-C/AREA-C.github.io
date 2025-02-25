@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+		<style>
+		
+
+		:root {
+	--black: #fafafa;
+	--grey: #b1b1b1;
+	--grey2: #f1f2f5;
+	--primary: #db504a;
+	--white: #3c91e6;
+	--heading1: 700 1.25rem / normal "Poppins", sans-serif; /* للعناوين */
+	--text1regular: 400 1rem / normal "Lato", sans-serif; /* للنصوص العادية */
+	--text2regular: 300 0.75rem / normal "Lato", sans-serif;
+}
+
+html,
+
+body {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	min-height: 100vh;
+}
+
+body {
+	font: var(--text1regular);
+	background-color: #f9f9f9;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.card {
+	background-color: var(--white);
+	border-radius: 20px;
+	height: 597px;
+	width: 360px;
+	padding: 30px;
+	box-sizing: border-box;
+}
+
+.card__header {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+h1 {
+	font: var(--heading1);
+	color: var(--black);
+}
+
+p {
+	font: var(--text2regular);
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+}
+
+.form-group {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.row-group {
+	display: flex;
+	flex-direction: row;
+	gap: 12px;
+}
+
+.row-group .form-group,
+.row-group .icon-group {
+	max-width: 144px;
+}
+
+.icon-group input {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	border: none;
+	border-radius: 10px;
+}
+
+.form-group input {
+	padding-left: 12px;
+}
+
+.form-group input,
+form button,
+.icon-group {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	height: 40px;
+	border-radius: 10px;
+}
+
+.form-group input,
+.icon-group {
+	border: 1px solid var(--grey2);
+}
+
+.form-group input,
+.icon-group input {
+	color: var(--black);
+	font: var(--text1regular);
+	transition: box-shadow 0.3s ease;
+}
+
+.form-group input:focus,
+.icon-group input:focus {
+	outline: none;
+}
+
+.form-group input::placeholder,
+.icon-group input::placeholder {
+	color: var(--grey);
+	font: var(--text1regular);
+}
+
+.icon-group {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding-right: 12px;
+	margin-top: 12px;
+	transition: box-shadow 0.3s ease;
+}
+
+.icon-group input {
+	box-sizing: border-box;
+	padding-left: 12px !important;
+	height: 100%;
+	width: 100%;
+	padding: 0;
+}
+
+form button {
+	font: var(--text1regular);
+	border: none;
+	background-color: var(--primary);
+	color: var(--white);
+	color: #f9f9f9;
+}
+
+form button.disabled {
+	background-color: var(--primary);
+	opacity: 0.3;
+	color: #f1f2f5;
+}
+
+form button:hover {
+	cursor: pointer;
+	color: #f1f2f5;
+}
+
+label {
+	font: var(--text1regular);
+	color: #f9f9f9;
+}
+
+.verify-info {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	margin-top: 8px;
+}
+
+small {
+	font: var(--text2regular);
+}
+
+.empty {
+	background-color: var(--grey2);
+	border-color: var(--grey2);
+}
+
+.filling {
+	background-color: var(--white);
+	border-color: var(--grey2);
+	box-shadow: 0px 4px 18px rgba(158, 168, 189, 0.31);
+}
+</style>
+		<title>AREA C</title>
+	</head>
+	<body>
+		<div class="card">
+			<div class="card__header">
+				<img src="" class="logo" />
+				<h1>Payment information</h1>
+			</div>
+			<form action="">
+				<div class="form-group">
+					<label for="full-name">Full Name</label>
+					<input
+						class="full-name empty"
+						type="text"
+						id="full-name"
+						aria-label="Full Name"
+						placeholder="TAREK MOHAMED"
+						required
+					/>
+				</div>
+
+				<div class="icon-group-container">
+					<label for="card-number">Card Number</label>
+					<div class="icon-group empty">
+						<input
+							type="text"
+							id="card-number"
+							aria-label="Card Number"
+							class="empty"
+							placeholder="1234 1234 1234 1234"
+							required
+						/>
+						<img
+							id="card-icon"
+							src="./icons/credit-card.png"
+							height="14"
+							width="14"
+						/>
+					</div>
+				</div>
+
+				<div class="row-group">
+					<div class="form-group">
+						<label for="expiration">Expiration Date</label>
+						<input
+							class="expiration-input empty"
+							type="tel"
+							id="expiration"
+							minlength="5"
+							maxlength="5"
+							pattern="/{5}/"
+							placeholder="MM/YY"
+							required
+						/>
+					</div>
+					<div class="icon-group-container">
+						<label for="cvv">CVV</label>
+						<div class="icon-group empty">
+							<input
+								class="cvv-input empty"
+								type="tel"
+								maxlength="3"
+								placeholder="···"
+								id="cvv"
+								required
+							/>
+							<img
+								id="info-icon"
+								src="./icons/info.png"
+								height="14"
+								width="14"
+							/>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="cardholder-name">Address</label>
+					<input
+						type="text"
+						id="address"
+						class="empty"
+						aria-label="adress"
+						placeholder="GIZA , EGYPT"
+						required
+					/>
+				</div>
+				<button type="submit" class="ENABLE" disabled>Confirm payment</button>
+			</form>
+			<div class="verify-info">
+				<small>Verify the information is correct</small>
+			</div>
+		</div>
+		<script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/cleave.min.js"></script>
+		<script>
+			const form = document.querySelector("form");
+const inputs = document.querySelectorAll("input");
+const submitButton = document.querySelector("button[type='submit']");
+const iconInputsContainer = document.querySelectorAll(
+	"div.icon-group-container"
+);
+const cardNumberInput = document.querySelector("#card-number");
+const expirationDateInput = document.querySelector("#expiration");
+const CVVInput = document.querySelector("#cvv");
+const cardImgElement = document.querySelector("#card-icon");
+
+const visaIcon = "./icons/visa.svg";
+const mastercardIcon = "./icons/mastercard.svg";
+const defaultCardIcon = "./icons/credit-card.png";
+
+const cleaveCC = new Cleave(cardNumberInput, {
+	creditCard: true,
+	delimiter: " ",
+	onCreditCardTypeChanged: function (type) {
+		switch (type) {
+			case "visa":
+				cardImgElement.src = visaIcon;
+				break;
+			case "mastercard":
+				cardImgElement.src = mastercardIcon;
+				break;
+			default:
+				cardImgElement.src = defaultCardIcon;
+				break;
+		}
+	},
+});
+
+const cleaveExpiration = new Cleave(expirationDateInput, {
+	date: true,
+	datePattern: ["m", "y"],
+});
+
+const cleaveCVV = new Cleave(CVVInput, {
+	numeralPositiveOnly: true,
+	blocks: [3],
+});
+
+inputs.forEach((input) => {
+	input.addEventListener("focus", () => {
+		input.classList.remove("empty");
+		if (input.parentElement.classList.contains("icon-group")) {
+			input.parentElement.classList.remove("empty");
+			input.parentElement.classList.add("filling");
+			input.style.boxShadow = "none";
+		}
+		input.classList.add("filling");
+		checkInputsFilled();
+	});
+	input.addEventListener("input", () => {
+		input.classList.remove("empty");
+		if (input.parentElement.classList.contains("icon-group")) {
+			input.parentElement.classList.remove("empty");
+			input.parentElement.classList.add("filling");
+			input.style.boxShadow = "none";
+		}
+		input.classList.add("filling");
+
+		checkInputsFilled();
+	});
+
+	input.addEventListener("focusout", () => {
+		if (!input.value) {
+			input.classList.remove("filling");
+			if (input.parentElement.classList.contains("icon-group")) {
+				input.parentElement.classList.remove("filling");
+				input.parentElement.classList.add("empty");
+			}
+			input.classList.add("empty");
+		}
+		checkInputsFilled();
+	});
+
+	input.addEventListener("input", () => {
+		if (!input.value) {
+			input.classList.remove("filling");
+			if (input.parentElement.classList.contains("icon-group")) {
+				input.parentElement.classList.remove("filling");
+				input.parentElement.classList.add("empty");
+			}
+			input.classList.add("empty");
+		}
+	});
+});
+
+function checkInputsFilled() {
+	let inputsArray = Array.from(inputs);
+	let result = inputsArray.map((input) => {
+		if (input.value === "") {
+			return false;
+		} else {
+			return true;
+		}
+	});
+	let inputsFilled = result.every((input) => input === true);
+	if (inputsFilled) {
+		submitButton.classList.remove("disabled");
+		submitButton.removeAttribute("disabled");
+	} else {
+		submitButton.classList.add("disabled");
+		submitButton.setAttribute("disabled", "");
+	}
+}
+
+submitButton.addEventListener("click", (e) => {
+	e.preventDefault();
+});
+
+
+		</script>
+	</body>
+</html>

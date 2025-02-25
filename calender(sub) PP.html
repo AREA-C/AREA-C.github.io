@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Calendar Booking</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f9f9f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .booking-container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            max-width: 500px;
+            width: 100%;
+        }
+        .calendar-container {
+            text-align: center;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .month-year {
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .btn {
+            cursor: pointer;
+            padding: 8px 12px;
+            border: none;
+            background: #3c91e6;
+            color: white;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 15px;
+            text-align: center;
+            cursor: pointer;
+        }
+        th {
+            background-color: #3c91e6;
+            color: white;
+        }
+        .selected {
+            background-color: #3c91e6;
+            color: white;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+        .time-container {
+            text-align: center;
+        }
+        .time-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+        .time-btn {
+            padding: 10px;
+            border: none;
+            background: #3c91e6;
+            color: white;
+            font-size: 14px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .time-btn.selected {
+            background: #3c91e6;
+        }
+        .controls {
+            display: flex;
+            justify-content: space-between;
+        }
+        .ok-btn, .reset-btn {
+            border: none;
+            padding: 12px 18px;
+            border-radius: 7px;
+            cursor: pointer;
+            font-size: 16px;
+            color: white;
+        }
+        .ok-btn { background-color: #3c91e6; }
+        .reset-btn { background-color: #ff0000; }
+    </style>
+    <script>
+        let currentMonth = new Date().getMonth();
+        let currentYear = new Date().getFullYear();
+        let selectedDates = new Map();
+        
+        function generateCalendar(month, year) {
+            const daysInMonth = new Date(year, month + 1, 0).getDate();
+            const firstDay = new Date(year, month, 1).getDay();
+            let table = '<tr>';
+            
+            for (let i = 0; i < firstDay; i++) {
+                table += '<td></td>';
+            }
+            
+            for (let day = 1; day <= daysInMonth; day++) {
+                let dateKey = `${year}-${month + 1}-${day}`;
+                let selectedClass = selectedDates.has(dateKey) ? 'selected' : '';
+                table += `<td class="${selectedClass}" onclick="selectDate('${dateKey}', this)">${day}</td>`;
+                if ((firstDay + day) % 7 === 0) table += '</tr><tr>';
+            }
+            
+            document.getElementById('calendar-body').innerHTML = table;
+            document.getElementById('month-year').innerText = `${new Date(year, month).toLocaleString('default', { month: 'long' })} ${year}`;
+        }
+        
+        function selectDate(date, cell) {
+            if (selectedDates.has(date)) {
+                selectedDates.delete(date);
+                cell.classList.remove('selected');
+            } else {
+                selectedDates.set(date, '');
+                cell.classList.add('selected');
+            }
+        }
+        
+        function selectTime(time) {
+            selectedDates.forEach((_, key) => selectedDates.set(key, time));
+            alert("Selected Appointments: " + JSON.stringify([...selectedDates]));
+        }
+        
+        function resetSelection() {
+            selectedDates.clear();
+            generateCalendar(currentMonth, currentYear);
+        }
+        
+        function changeMonth(offset) {
+            currentMonth += offset;
+            if (currentMonth < 0) {
+                currentMonth = 11;
+                currentYear--;
+            } else if (currentMonth > 11) {
+                currentMonth = 0;
+                currentYear++;
+            }
+            generateCalendar(currentMonth, currentYear);
+        }
+        
+        document.addEventListener('DOMContentLoaded', function () {
+            generateCalendar(currentMonth, currentYear);
+        });
+    </script>
+</head>
+<body>
+    <div class="booking-container">
+        <div class="calendar-container">
+            <div class="header">
+                <button class="btn" onclick="changeMonth(-1)">&#9665;</button>
+                <span id="month-year" class="month-year"></span>
+                <button class="btn" onclick="changeMonth(1)">&#9655;</button>
+            </div>
+            <table>
+                <tr>
+                    <th>Sun</th>
+                    <th>Mon</th>
+                    <th>Tue</th>
+                    <th>Wed</th>
+                    <th>Thu</th>
+                    <th>Fri</th>
+                    <th>Sat</th>
+                </tr>
+                <tbody id="calendar-body"></tbody>
+            </table>
+        </div>
+        <div class="time-container">
+            <h3>Allow Times</h3>
+            <div class="time-options">
+                <button class="time-btn" onclick="selectTime('09:00 AM')">09:00 AM</button>
+                <button class="time-btn" onclick="selectTime('10:00 AM')">10:00 AM</button>
+                <button class="time-btn" onclick="selectTime('11:00 AM')">11:00 AM</button>
+                <button class="time-btn" onclick="selectTime('12:00 AM')">12:00 AM</button>
+                <button class="time-btn" onclick="selectTime('02:00 PM')">02:00 PM</button>
+                <button class="time-btn" onclick="selectTime('03:00 PM')">03:00 PM</button>
+                <button class="time-btn" onclick="selectTime('04:00 PM')">04:00 PM</button>
+                <button class="time-btn" onclick="selectTime('05:00 PM')">05:00 PM</button>
+                <button class="time-btn" onclick="selectTime('06:00 PM')">06:00 PM</button>
+            </div>
+        </div>
+        <div class="controls">
+            <A href="Payment.html"><button class="ok-btn">OK</button></A>
+            <button class="reset-btn" onclick="resetSelection()">Reset</button>
+        </div>
+    </div>
+</body>
+</html>

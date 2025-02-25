@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- Boxicons -->
+	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+	<!-- My CSS -->
+	<link rel="stylesheet" href="style.css">
+
+	<title>AREA C</title>
+</head>
+<body>
+
+
+	<!-- SIDEBAR -->
+	<section id="sidebar">
+		<a href="#" class="brand">
+			<i class='bx bxs-smile'></i>
+			<span class="text">AREA C</span>
+		</a>
+		<ul class="side-menu top">
+			<li >
+				<a href="index.html">
+					<i class='bx bxs-dashboard' ></i>
+					<span class="text">Dashboard</span>
+				</a>
+			</li>
+			<li>
+				<a href="Doctors.html">
+					<i class='bx bxs-group' ></i>
+					<span class="text">Doctors</span>
+				</a>
+			</li>
+			<li>
+				<a href="pations .html">
+					<i class='bx bxs-doughnut-chart' ></i>
+					<span class="text">Pationts</span>
+				</a>
+			</li>
+			<li>
+				<a href="Appointments.html">
+					<i class='bx bxs-shopping-bag-alt' ></i>
+					<span class="text">Appointments</span>
+				</a>
+			</li>
+			<li>
+				<a href="staff.html">
+					<i class='bx bxs-message-dots' ></i>
+					<span class="text">Staff</span>
+				</a>
+			</li>
+			
+		</ul>
+		<ul class="side-menu">
+			<li  class="active">
+				<a href="Settings.html">
+					<i class='bx bxs-cog' ></i>
+					<span class="text">Settings</span>
+				</a>
+			</li>
+			<li>
+				<a href="login.html" class="logout">
+					<i class='bx bxs-log-out-circle' ></i>
+					<span class="text">Logout</span>
+				</a>
+			</li>
+		</ul>
+	</section>
+	<!-- SIDEBAR -->
+
+
+
+	<!-- CONTENT -->
+	<section id="content">
+		<!-- NAVBAR -->
+		<nav>
+			<i class='bx bx-menu' ></i>
+			<a href="#" class="nav-link">Categories</a>
+			<form action="#">
+				<div class="form-input">
+					<input type="search" placeholder="Search...">
+					<button type="submit" class="search-btn"><i class='bx bx-search' ></i></button>
+				</div>
+			</form>
+			<input type="checkbox" id="switch-mode" hidden>
+			<label for="switch-mode" class="switch-mode"></label>
+			<a href="#" class="notification">
+				<i class='bx bxs-bell' ></i>
+				<span class="num">8</span>
+			</a>
+			<a href="#" class="profile">
+				<img src="img/people.png">
+			</a>
+		</nav>
+		<!-- NAVBAR -->
+
+		<!-- MAIN -->
+		<main>
+			<div class="head-title">
+				<div class="left">
+					<h1>Settings</h1>
+					<ul class="breadcrumb">
+						<li>
+							<a class="active" href="#">Profile & History</a>
+						</li>
+					</ul>
+				</div>
+				<a href="#" class="btn-download">
+					<i class='bx bxs-cloud-download' ></i>
+					<span class="text">View اي حاجه</span>
+				</a>
+				
+			</div>
+
+			<ul class="box-info">
+				<li>
+					<i class='bx bxs-group' ></i>
+					
+					<span class="text">
+						<p>My profile</p>
+						<h3>DR : SAIED BAKASH</h3>
+
+						<p>التخصص</p>
+						<p>    <style>
+							#rating-container {
+								display: inline-block; /* يجعل الحاوية بحجم النجوم فقط */
+								padding: 0;
+								margin: 0;
+							}
+							#rating-container .stars {
+								display: flex;
+								font-size: 28px; /* حجم النجوم صغير جدًا */
+								cursor: pointer;
+							}
+							#rating-container .star {
+								color: #ccc;
+								transition: color 0.3s;
+							}
+							#rating-container .star:hover,
+							#rating-container .star.active {
+								color: gold;
+							}
+						</style>
+					</head>
+					<body>
+					
+						<div id="rating-container">
+							<div class="stars">
+								<span class="star" data-value="1">★</span>
+								<span class="star" data-value="2">★</span>
+								<span class="star" data-value="3">★</span>
+								<span class="star" data-value="4">★</span>
+								<span class="star" data-value="5">★</span>
+							</div>
+						</div>
+					
+						<script>
+							document.addEventListener("DOMContentLoaded", function() {
+								const starsContainer = document.querySelector("#rating-container .stars");
+								const stars = starsContainer.querySelectorAll(".star");
+					
+								stars.forEach(star => {
+									star.addEventListener("mouseover", function() {
+										resetStars();
+										highlightStars(this.getAttribute("data-value"));
+									});
+					
+									star.addEventListener("click", function() {
+										setRating(this.getAttribute("data-value"));
+									});
+								});
+					
+								function highlightStars(rating) {
+									for (let i = 0; i < rating; i++) {
+										stars[i].classList.add("active");
+									}
+								}
+					
+								function resetStars() {
+									stars.forEach(star => star.classList.remove("active"));
+								}
+					
+								function setRating(rating) {
+									resetStars();
+									highlightStars(rating);
+									console.log("التقييم:", rating);
+								}
+							});
+						</script></p>
+
+						<p>
+						<button class="btn-approve" style="background-color: #3c91e6;">Edit</button>
+						<button class="btn-approve" style="background-color: #ff0000;">Delet Profile</button>
+						</p>
+
+					</span>
+				</li>
+			</ul>
+           
+
+
+			
+				
+
+
+			<div class="table-data">
+				<div class="order">
+					<div class="head">
+						<h3>History of Patients</h3>
+					</div>
+					<table>
+						<thead>
+							<tr>
+								<th>Pationt Name</th>
+								<th>Disease</th>
+								<th>Pationt Information</th>
+								<th>Comment</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>
+									<i class='bx bxs-group' ></i>
+								    <p>طارق محمد</p>
+								</td>
+								<td>كحه وبرد</td>
+								<td>
+									<button class="btn-approve" style="background-color: #3c91e6;">View Report</button>
+								</td>
+								<td>
+									<input type="text" class="comment-input" placeholder="type comment...">
+									<button class="btn-approve">Add</button>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<i class='bx bxs-group' ></i>
+								    <p>طارق محمد</p>
+								</td>
+								<td>كحه وبرد</td>
+								<td>
+									<button class="btn-approve" style="background-color: #3c91e6;">View Report</button>
+								</td>
+								<td>
+									<input type="text" class="comment-input" placeholder="type comment...">
+									<button class="btn-approve">Add</button>
+								</td>
+							</tr><tr>
+								<td>
+									<i class='bx bxs-group' ></i>
+								    <p>طارق محمد</p>
+								</td>
+								<td>كحه وبرد</td>
+								<td>
+									<button class="btn-approve" style="background-color: #3c91e6;">View Report</button>
+								</td>
+								<td>
+									<input type="text" class="comment-input" placeholder="type comment...">
+									<button class="btn-approve">Add</button>
+								</td>
+							</tr><tr>
+								<td>
+									<i class='bx bxs-group' ></i>
+								    <p>طارق محمد</p>
+								</td>
+								<td>كحه وبرد</td>
+								<td>
+									<button class="btn-approve" style="background-color: #3c91e6;">View Report</button>
+								</td>
+								<td>
+									<input type="text" class="comment-input" placeholder="type comment...">
+									<button class="btn-approve">Add</button>
+								</td>
+							</tr><tr>
+								<td>
+									<i class='bx bxs-group' ></i>
+								    <p>طارق محمد</p>
+								</td>
+								<td>كحه وبرد</td>
+								<td>
+									<button class="btn-approve" style="background-color: #3c91e6;">View Report</button>
+								</td>
+								<td>
+									<input type="text" class="comment-input" placeholder="type comment...">
+									<button class="btn-approve">Add</button>
+								</td>
+							</tr><tr>
+								<td>
+									<i class='bx bxs-group' ></i>
+								    <p>طارق محمد</p>
+								</td>
+								<td>كحه وبرد</td>
+								<td>
+									<button class="btn-approve" style="background-color: #3c91e6;">View Report</button>
+								</td>
+								<td>
+									<input type="text" class="comment-input" placeholder="type comment...">
+									<button class="btn-approve">Add</button>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<i class='bx bxs-group' ></i>
+								    <p>طارق محمد</p>
+								</td>
+								<td>كحه وبرد</td>
+								<td>
+									<button class="btn-approve" style="background-color: #3c91e6;">View Report</button>
+								</td>
+								<td>
+									<input type="text" class="comment-input" placeholder="type comment...">
+									<button class="btn-approve">Add</button>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<i class='bx bxs-group' ></i>
+								    <p>طارق محمد</p>
+								</td>
+								<td>كحه وبرد</td>
+								<td>
+									<button class="btn-approve" style="background-color: #3c91e6;">View Report</button>
+								</td>
+								<td>
+									<input type="text" class="comment-input" placeholder="type comment...">
+									<button class="btn-approve">Add</button>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<i class='bx bxs-group' ></i>
+								    <p>طارق محمد</p>
+								</td>
+								<td>كحه وبرد</td>
+								<td>
+									<button class="btn-approve" style="background-color: #3c91e6;">View Report</button>
+								</td>
+								<td>
+									<input type="text" class="comment-input" placeholder="type comment...">
+									<button class="btn-approve">Add</button>
+								</td>
+							</tr>
+							
+						</tbody>
+						
+					</table>
+				</div>
+		
+			
+			</div>
+		</main>
+		<!-- MAIN -->
+	</section>
+	<!-- CONTENT -->
+	
+
+	<script src="script.js"></script>
+</body>
+</html>

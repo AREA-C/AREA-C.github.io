@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendar Booking</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            text-align: center;
+        }
+        .calendar-container {
+            max-width: 400px;
+            margin: auto;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .month-year {
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .btn {
+            cursor: pointer;
+            padding: 5px 10px;
+            border: none;
+            background: #3c91e6;
+            color: white;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+            cursor: pointer;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        .selected {
+            background-color: #3c91e6;
+            color: white;
+        }
+        .controls {
+            margin-top: 20px;
+        }
+        
+        .ok-btn, .reset-btn {
+            border: none;
+            outline: none;
+            padding: 10px 15px;
+            margin: 5px;
+            border-radius: 7px;
+            cursor: pointer;
+            font-size: 16px;
+            color: white;
+            
+        }
+        .ok-btn { background-color: #3c91e6; }
+        .reset-btn { background-color: #ff0000; }
+    </style>
+    <script>
+        let currentMonth = new Date().getMonth();
+        let currentYear = new Date().getFullYear();
+        let selectedDates = new Set();
+        
+        function generateCalendar(month, year) {
+            const daysInMonth = new Date(year, month + 1, 0).getDate();
+            const firstDay = new Date(year, month, 1).getDay();
+            let table = '<tr>';
+            
+            for (let i = 0; i < firstDay; i++) {
+                table += '<td></td>';
+            }
+            
+            for (let day = 1; day <= daysInMonth; day++) {
+                let dateKey = `${year}-${month + 1}-${day}`;
+                let selectedClass = selectedDates.has(dateKey) ? 'selected' : '';
+                table += `<td class="${selectedClass}" onclick="toggleSelection('${dateKey}', this)">${day}</td>`;
+                if ((firstDay + day) % 7 === 0) table += '</tr><tr>';
+            }
+            
+            document.getElementById('calendar-body').innerHTML = table;
+            document.getElementById('month-year').innerText = `${new Date(year, month).toLocaleString('default', { month: 'long' })} ${year}`;
+        }
+        
+        function toggleSelection(date, cell) {
+            if (selectedDates.has(date)) {
+                selectedDates.delete(date);
+                cell.classList.remove('selected');
+            } else {
+                selectedDates.add(date);
+                cell.classList.add('selected');
+            }
+        }
+        
+        function resetSelection() {
+            selectedDates.clear();
+            generateCalendar(currentMonth, currentYear);
+        }
+        
+        function changeMonth(offset) {
+            currentMonth += offset;
+            if (currentMonth < 0) {
+                currentMonth = 11;
+                currentYear--;
+            } else if (currentMonth > 11) {
+                currentMonth = 0;
+                currentYear++;
+            }
+            generateCalendar(currentMonth, currentYear);
+        }
+        
+        document.addEventListener('DOMContentLoaded', function () {
+            generateCalendar(currentMonth, currentYear);
+        });
+    </script>
+</head>
+<body>
+    <div class="calendar-container">
+        <div class="header">
+            <button class="btn" onclick="changeMonth(-1)">&#9665;</button>
+            <span id="month-year" class="month-year"></span>
+            <button class="btn" onclick="changeMonth(1)">&#9655;</button>
+        </div>
+        <table>
+            <tr>
+                <th>Sun</th>
+                <th>Mon</th>
+                <th>Tue</th>
+                <th>Wed</th>
+                <th>Thu</th>
+                <th>Fri</th>
+                <th>Sat</th>
+            </tr>
+            <tbody id="calendar-body"></tbody>
+        </table>
+    </div>
+    <div class="controls">
+        <button class="ok-btn">Book an appointment</button>
+        <button class="reset-btn" onclick="resetSelection()">Reset</button>
+    </div>
+</body>
+</html>
