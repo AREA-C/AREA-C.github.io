@@ -94,7 +94,7 @@ You can view the demo of the project at [[live demo link](https://area-c.github.
 If you need support or have any questions, feel free to contact us:
 
 - **Ahme Mohammed** 
-  GitHub: [AhmeMohammed-Dev](https://github.com/AhmeMohammed-Dev)
+  GitHub: [AhmeMohammed-Dev](https://github.com/AhmedMohammed-Dev)
 
 - **Omar Ghayad** 
   GitHub: [OmarGhayad](https://github.com/OmarGhayad)
