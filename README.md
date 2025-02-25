@@ -75,7 +75,7 @@ npm install
 ## 🚀 Demo
 You can view the demo of the project at [[live demo link](https://area-c.github.io/)].
 
-##🤝 Contributing
+## 🤝 Contributing
 We welcome contributions from the community! If you'd like to contribute to this project, please follow these steps:
 
 
