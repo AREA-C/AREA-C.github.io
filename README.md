@@ -79,6 +79,29 @@ npm install
 ## 🚀 Demo
 You can view the demo of the project at [[live demo link](https://area-c.github.io/)].
 
+# Known Issues or Roadmap
+## 🐞 Known Issues
+- Issue 1: [description of issue]
+- Issue 2: [description of issue]
+
+## 🚧 Roadmap
+- [Feature 1] 
+- [Feature 2] 
+
+
+## 📞 Contact Information
+
+If you need support or have any questions, feel free to contact us:
+
+- **Ahmed Mohammed**  
+  GitHub: [ِAhmed Mohammed]([https://github.com/john-doe](https://github.com/AhmedMohammed-Dev))
+
+- **Omar Ghayad** 
+  GitHub: [Omar Ghayad](https://github.com/OmarGhayad)
+
+- **Tarek Mohmed** 
+  GitHub: [TAREKMU90](https://github.com/TAREKMU90)
+
 ## 🤝 Contributing
 We welcome contributions from the community! If you'd like to contribute to this project, please follow these steps:
 
