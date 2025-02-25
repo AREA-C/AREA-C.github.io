@@ -60,7 +60,7 @@ Set up a local server (for PHP functionality): You will need a local server envi
 Run the application:
 
 Place the repository files inside the htdocs (for XAMPP) or similar folder of your server tool.
-Access the project through your browser at http://localhost/[folder-name].
+Access the project through your browser at http://localhost/folder-name.
 Install dependencies (if applicable):
 
 If there are dependencies (e.g., JavaScript libraries), make sure to install them:
