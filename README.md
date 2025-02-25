@@ -93,11 +93,11 @@ You can view the demo of the project at [[live demo link](https://area-c.github.
 
 If you need support or have any questions, feel free to contact us:
 
--  **Ahmed Mohammed** 
-  GitHub:[ِAhmed Mohammed](https://github.com/AhmedMohammed-Dev)
+- **Ahme Mohammed** 
+  GitHub: [AhmeMohammed-Dev](https://github.com/AhmeMohammed-Dev)
 
 - **Omar Ghayad** 
-  GitHub: [Omar Ghayad](https://github.com/OmarGhayad)
+  GitHub: [OmarGhayad](https://github.com/OmarGhayad)
 
 - **Tarek Mohmed** 
   GitHub: [TAREKMU90](https://github.com/TAREKMU90)
