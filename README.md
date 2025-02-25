@@ -69,6 +69,7 @@ If there are dependencies (e.g., JavaScript libraries), make sure to install the
 npm install
 ```
 ##🤝 Contributing
+We welcome contributions from the community! If you'd like to contribute to this project, please follow these steps:
 
 
 
