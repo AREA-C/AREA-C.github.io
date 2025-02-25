@@ -70,7 +70,7 @@ npm install
 ```
 
 ## 📸 Screenshots
-![Screenshot](![Screenshot 2025-02-25 223533](https://github.com/user-attachments/assets/151e16e7-d1ac-41d0-90f4-b3663f2af530))
+![Screenshot 2025-02-25 223533](https://github.com/user-attachments/assets/151e16e7-d1ac-41d0-90f4-b3663f2af530))
 
 ## 🚀 Demo
 You can view the demo of the project at [[live demo link](https://area-c.github.io/)].
