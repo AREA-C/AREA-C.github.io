@@ -93,7 +93,7 @@ You can view the demo of the project at [[live demo link](https://area-c.github.
 
 If you need support or have any questions, feel free to contact us:
 
-- **Ahmed Mohammed**  
+-  **Ahmed Mohammed**
   GitHub: [ِAhmed Mohammed](https://github.com/AhmedMohammed-Dev)
 
 - **Omar Ghayad** 
