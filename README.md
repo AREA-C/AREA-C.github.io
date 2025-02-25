@@ -7,6 +7,10 @@
 The project is designed for [target audience] and relies on [technologies used].
 
 ---
+![Build Status](https://img.shields.io/badge/build-passing-brightgreen)
+![License](https://img.shields.io/badge/license-MIT-blue)
+![Contributors](https://img.shields.io/github/contributors/AREA-C/AREA-C.github.io)
+
 
 ## 🚀 Features
 
